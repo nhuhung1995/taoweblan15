@@ -53,7 +53,8 @@ footer {
   animation: service-loop 24s linear infinite;
 }
 
-.service-track:hover {
+.service-track:hover,
+.latest-track:hover {
   animation-play-state: paused;
 }
 
@@ -66,7 +67,32 @@ footer {
   box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
 }
 
+.latest-track {
+  display: flex;
+  width: max-content;
+  gap: 10px;
+  animation: latest-loop 30s linear infinite;
+}
+
+.latest-card {
+  width: 180px;
+  flex: 0 0 auto;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  padding: 6px;
+}
+
 @keyframes service-loop {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 5px));
+  }
+}
+
+@keyframes latest-loop {
   0% {
     transform: translateX(0);
   }
