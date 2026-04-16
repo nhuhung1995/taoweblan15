@@ -2,42 +2,12 @@ import Link from "next/link";
 import { ChevronRight, Newspaper, Building2, Wifi, Smartphone, Tv, Landmark, Cpu } from "lucide-react";
 
 const serviceCards = [
-  {
-    title: "ネットワーク",
-    desc: "つながる品質を強化",
-    image: "/cosmic-panel-v7.png",
-    tone: "from-[#f7f7f8] to-[#ebedf0]",
-  },
-  {
-    title: "社会課題に、アンサーを。",
-    desc: "人とテクノロジーをつなぐ",
-    image: "/cosmic-showcase-v7.png",
-    tone: "from-[#f8f9fb] to-[#e7edf5]",
-  },
-  {
-    title: "AI",
-    desc: "AI共創で未来へ",
-    image: "/cosmic-hero-v7.png",
-    tone: "from-[#eaf4ff] to-[#dbeafe]",
-  },
-  {
-    title: "NatureBank",
-    desc: "自然との共生",
-    image: "/cosmic-hero-v5.png",
-    tone: "from-[#e8f8ef] to-[#d1fae5]",
-  },
-  {
-    title: "スポーツ",
-    desc: "感動を日常へ",
-    image: "/cosmic-showcase-v7.png",
-    tone: "from-[#fff1f2] to-[#ffe4e6]",
-  },
-  {
-    title: "UTX",
-    desc: "次世代体験プラットフォーム",
-    image: "/cosmic-panel-v7.png",
-    tone: "from-[#eef2ff] to-[#e0e7ff]",
-  },
+  { title: "ネットワーク", desc: "つながる品質を強化", image: "/cosmic-panel-v7.png", tone: "from-[#f7f7f8] to-[#ebedf0]" },
+  { title: "社会課題に、アンサーを。", desc: "人とテクノロジーをつなぐ", image: "/cosmic-showcase-v7.png", tone: "from-[#f8f9fb] to-[#e7edf5]" },
+  { title: "AI", desc: "AI共創で未来へ", image: "/cosmic-hero-v7.png", tone: "from-[#eaf4ff] to-[#dbeafe]" },
+  { title: "NatureBank", desc: "自然との共生", image: "/cosmic-hero-v5.png", tone: "from-[#e8f8ef] to-[#d1fae5]" },
+  { title: "スポーツ", desc: "感動を日常へ", image: "/cosmic-showcase-v7.png", tone: "from-[#fff1f2] to-[#ffe4e6]" },
+  { title: "UTX", desc: "次世代体験プラットフォーム", image: "/cosmic-panel-v7.png", tone: "from-[#eef2ff] to-[#e0e7ff]" },
 ];
 
 const quickServices = [
@@ -49,18 +19,8 @@ const quickServices = [
 ];
 
 const newsItems = [
-  {
-    group: "重要なお知らせ",
-    title: "通信障害情報",
-    text: "一部エリアでの通信影響について、復旧見込みを更新しました。",
-    tone: "red",
-  },
-  {
-    group: "製品・サービス情報",
-    title: "新料金プラン",
-    text: "スマートフォン向け新プランの受付を開始しました。",
-    tone: "blue",
-  },
+  { group: "重要なお知らせ", title: "通信障害情報", text: "一部エリアでの通信影響について、復旧見込みを更新しました。", tone: "red" },
+  { group: "製品・サービス情報", title: "新料金プラン", text: "スマートフォン向け新プランの受付を開始しました。", tone: "blue" },
 ];
 
 const initiatives = [
@@ -88,42 +48,23 @@ const flowSteps = [
 ];
 
 const whyChooseUs = [
-  {
-    badge: "実績",
-    title: "全国対応のサポート体制",
-    text: "導入前から利用開始後まで、専門チームが継続サポートします。",
-  },
-  {
-    badge: "信頼",
-    title: "高速・安定ネットワーク",
-    text: "都市部から郊外まで、幅広いエリアで安定した通信品質を提供。",
-  },
-  {
-    badge: "柔軟",
-    title: "利用シーン別プラン",
-    text: "個人・家族・法人まで用途に合うプランを提案できます。",
-  },
-  {
-    badge: "安心",
-    title: "わかりやすい料金設計",
-    text: "複雑な条件を減らし、シンプルに比較できる構成です。",
-  },
+  { badge: "実績", title: "全国対応のサポート体制", text: "導入前から利用開始後まで、専門チームが継続サポートします。" },
+  { badge: "信頼", title: "高速・安定ネットワーク", text: "都市部から郊外まで、幅広いエリアで安定した通信品質を提供。" },
+  { badge: "柔軟", title: "利用シーン別プラン", text: "個人・家族・法人まで用途に合うプランを提案できます。" },
+  { badge: "安心", title: "わかりやすい料金設計", text: "複雑な条件を減らし、シンプルに比較できる構成です。" },
 ];
 
 export default function HomePage() {
   return (
-    <main className="bg-[#e5e7eb] text-[#1f2937]">
-      <div className="mx-auto flex max-w-7xl flex-col gap-4 px-3 py-4 md:px-6 lg:px-8">
-        <section className="border border-[#ef4444] bg-[#f3f4f6]">
-          <div className="flex items-center justify-center py-2">
-            <div className="flex items-center gap-2 border border-[#ef4444] bg-white px-4 py-1.5">
-              <div className="h-6 w-8 bg-[#e60012]" />
-              <span className="text-3xl leading-none text-[#111827]">SoftBank</span>
-            </div>
+    <main className="bg-[#e9eef6] text-[#1f2937]">
+      <div className="mx-auto flex max-w-7xl flex-col gap-5 px-3 py-5 md:px-6 lg:px-8">
+        <section className="surface-card py-3">
+          <div className="flex items-center justify-center">
+            <img src="/aozora-link-logo.svg" alt="AozoraLink" className="h-12 w-auto" />
           </div>
         </section>
 
-        <section className="overflow-hidden border border-[#ef4444] bg-white py-2">
+        <section className="surface-card overflow-hidden py-3">
           <div className="service-track">
             {[...serviceCards, ...serviceCards].map((item, index) => (
               <article key={`${item.title}-${index}`} className={`service-card bg-gradient-to-br ${item.tone}`}>
@@ -138,7 +79,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="border border-[#ef4444] bg-[#3b82f6] px-4 py-4">
+        <section className="surface-card bg-[linear-gradient(135deg,#2563eb,#3b82f6)] px-4 py-4">
           <div className="mx-auto flex max-w-3xl flex-wrap items-center justify-center gap-3">
             {quickServices.map(({ label, icon: Icon }) => (
               <Link key={label} href="#" className="flex flex-col items-center gap-1 text-white">
@@ -151,7 +92,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="border border-[#ef4444] bg-[#f3f4f6] p-4" id="news">
+        <section className="surface-card bg-[#f6f9ff] p-4" id="news">
           <div className="mx-auto max-w-2xl rounded-xl border border-[#d1d5db] bg-white p-3">
             <div className="flex items-center justify-between border-b border-[#e5e7eb] px-1 pb-2">
               <h2 className="text-sm font-semibold text-[#374151]">News</h2>
@@ -160,11 +101,7 @@ export default function HomePage() {
             <div className="mt-3 grid gap-3">
               {newsItems.map((item) => (
                 <article key={item.title} className="rounded-lg border border-[#e5e7eb] bg-[#f9fafb] p-3">
-                  <div
-                    className={`inline-flex rounded-full px-2 py-0.5 text-[11px] font-semibold text-white ${
-                      item.tone === "red" ? "bg-[#dc2626]" : "bg-[#2563eb]"
-                    }`}
-                  >
+                  <div className={`inline-flex rounded-full px-2 py-0.5 text-[11px] font-semibold text-white ${item.tone === "red" ? "bg-[#dc2626]" : "bg-[#2563eb]"}`}>
                     {item.group}
                   </div>
                   <h3 className="mt-2 text-sm font-semibold text-[#111827]">{item.title}</h3>
@@ -175,11 +112,11 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="border border-[#ef4444] bg-[#d1d5db] p-4">
+        <section className="surface-card bg-[#dfe7f2] p-4">
           <div className="mx-auto max-w-2xl">
             <h2 className="flex items-center justify-center gap-2 text-center text-3xl font-bold text-[#1f2937]">
               <Building2 className="h-7 w-7" />
-              ソフトバンクの取り組み
+              AozoraLink の取り組み
             </h2>
             <div className="mt-4 grid gap-3 sm:grid-cols-2">
               {initiatives.map((item) => (
@@ -196,8 +133,8 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="border border-[#ef4444] bg-white p-4">
-          <h2 className="text-center text-3xl font-bold text-[#1f2937]">ソフトバンク最前線</h2>
+        <section className="surface-card bg-white p-4">
+          <h2 className="text-center text-3xl font-bold text-[#1f2937]">AozoraLink 最前線</h2>
           <div className="latest-track mt-4">
             {[...latestProducts, ...latestProducts].map((image, index) => (
               <article key={`${image}-${index}`} className="latest-card">
@@ -207,15 +144,15 @@ export default function HomePage() {
           </div>
           <div className="mt-4 flex justify-center">
             <button className="inline-flex items-center gap-2 rounded-full bg-[#2563eb] px-4 py-2 text-xs font-semibold text-white">
-              ソフトバンクニュース一覧へ
+              ニュース一覧へ
               <ChevronRight className="h-3.5 w-3.5" />
             </button>
           </div>
         </section>
 
-        <section className="border border-[#ef4444] bg-[linear-gradient(120deg,#d8eafe,#9ec5ff)] p-6">
+        <section className="surface-card bg-[linear-gradient(120deg,#d8eafe,#9ec5ff)] p-6">
           <div className="mx-auto max-w-4xl">
-            <h2 className="text-3xl font-bold text-[#123766]">ソフトバンクの改善活動</h2>
+            <h2 className="text-3xl font-bold text-[#123766]">AozoraLink の改善フロー</h2>
             <p className="mt-2 text-sm text-[#1e3a5f]">見える化された3ステップで、導入から運用までをサポートします。</p>
             <div className="mt-5 grid gap-3 md:grid-cols-3">
               {flowSteps.map((item) => (
@@ -233,13 +170,13 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="border border-[#ef4444] bg-white p-4">
+        <section className="surface-card bg-white p-4">
           <div className="mx-auto max-w-4xl">
-            <h2 className="text-center text-3xl font-bold text-[#1f2937]">Why Choose Us</h2>
+            <h2 className="text-center text-3xl font-bold text-[#1f2937]">Why Choose AozoraLink</h2>
             <div className="mt-4 grid gap-3">
               {whyChooseUs.map((item) => (
                 <article key={item.title} className="rounded-xl border border-[#e5e7eb] bg-[#f9fafb] p-4">
-                  <div className="inline-flex rounded-full bg-[#9ca3af] px-2 py-0.5 text-[11px] font-semibold text-white">{item.badge}</div>
+                  <div className="inline-flex rounded-full bg-[#94a3b8] px-2 py-0.5 text-[11px] font-semibold text-white">{item.badge}</div>
                   <h3 className="mt-2 text-sm font-semibold text-[#111827]">{item.title}</h3>
                   <p className="mt-1 text-xs text-[#4b5563]">{item.text}</p>
                 </article>

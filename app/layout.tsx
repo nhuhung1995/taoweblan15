@@ -4,8 +4,8 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
-  title: "Global Internet 5G",
-  description: "Giải pháp SIM, eSIM, Pocket WiFi, Home WiFi và Hikari tại Nhật với trải nghiệm tư vấn rõ ràng, ấm áp và hiện đại.",
+  title: "AozoraLink",
+  description: "AozoraLink - Nền tảng dịch vụ kết nối và internet hiện đại với trải nghiệm tư vấn rõ ràng, thân thiện và linh hoạt.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
