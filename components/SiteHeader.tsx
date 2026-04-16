@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const menu = [
   { href: "/", label: "ホーム" },
@@ -9,8 +12,31 @@ const menu = [
 ];
 
 export default function SiteHeader() {
+  const [reveal, setReveal] = useState(0);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const y = window.scrollY;
+      const start = 8;
+      const end = 92;
+      const progress = Math.max(0, Math.min(1, (y - start) / (end - start)));
+      setReveal(progress);
+    };
+
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-50 border-b border-[#dbe3ef] bg-white/88 backdrop-blur-xl">
+    <header
+      className="fixed inset-x-0 top-0 z-50 border-b border-[#dbe3ef] bg-white/88 backdrop-blur-xl transition-[opacity,transform] duration-200"
+      style={{
+        opacity: reveal,
+        transform: `translateY(${Math.round((1 - reveal) * -10)}px)`,
+        pointerEvents: reveal < 0.06 ? "none" : "auto",
+      }}
+    >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-8 lg:px-10">
         <Link href="/" className="flex items-center gap-3">
           <img src="/aozora-link-logo.svg" alt="AozoraLink" className="h-9 w-auto" />
