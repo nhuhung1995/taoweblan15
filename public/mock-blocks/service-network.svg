@@ -1,0 +1,22 @@
+<svg width='640' height='360' viewBox='0 0 640 360' fill='none' xmlns='http://www.w3.org/2000/svg'>
+  <defs>
+    <linearGradient id='bg' x1='0' y1='0' x2='640' y2='360' gradientUnits='userSpaceOnUse'>
+      <stop stop-color='#29406F'/>
+      <stop offset='1' stop-color='#3F6BAA'/>
+    </linearGradient>
+    <linearGradient id='glass' x1='120' y1='70' x2='520' y2='290' gradientUnits='userSpaceOnUse'>
+      <stop stop-color='white' stop-opacity='0.45'/>
+      <stop offset='1' stop-color='white' stop-opacity='0.08'/>
+    </linearGradient>
+  </defs>
+  <rect width='640' height='360' rx='28' fill='url(#bg)'/>
+  <circle cx='560' cy='54' r='86' fill='#7CC6FF' fill-opacity='0.25'/>
+  <circle cx='88' cy='300' r='92' fill='white' fill-opacity='0.18'/>
+  <rect x='74' y='74' width='492' height='220' rx='24' fill='url(#glass)'/>
+  <rect x='106' y='108' width='168' height='54' rx='14' fill='white' fill-opacity='0.4'/>
+  <rect x='290' y='108' width='236' height='54' rx='14' fill='white' fill-opacity='0.24'/>
+  <rect x='106' y='178' width='128' height='82' rx='18' fill='white' fill-opacity='0.26'/>
+  <rect x='248' y='178' width='128' height='82' rx='18' fill='white' fill-opacity='0.42'/>
+  <rect x='390' y='178' width='136' height='82' rx='18' fill='white' fill-opacity='0.18'/>
+  <text x='104' y='62' fill='white' fill-opacity='0.95' font-family='Segoe UI, Arial, sans-serif' font-size='28' font-weight='700'>Network</text>
+</svg>

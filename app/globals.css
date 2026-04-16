@@ -51,58 +51,77 @@ footer {
   box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
 }
 
-.service-track {
-  display: flex;
-  width: max-content;
-  gap: 10px;
-  padding: 0 10px;
-  animation: service-loop 24s linear infinite;
+.menu-shell {
+  border-radius: 999px;
+  border: 1px solid #d7e2f2;
+  background: linear-gradient(180deg, #ffffff, #f4f8ff);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
 }
 
-.service-track:hover,
-.latest-track:hover {
-  animation-play-state: paused;
+.marquee-viewport {
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.service-track,
+.latest-track {
+  display: flex;
+  width: max-content;
+  gap: 12px;
+  will-change: transform;
+}
+
+.service-track {
+  animation: service-loop 22s linear infinite;
+}
+
+.latest-track {
+  animation: latest-loop 26s linear infinite;
 }
 
 .service-card {
-  width: 160px;
+  width: 172px;
   flex: 0 0 auto;
   border-radius: 14px;
   border: 1px solid #e5e7eb;
   padding: 8px;
-  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
-}
-
-.latest-track {
-  display: flex;
-  width: max-content;
-  gap: 10px;
-  animation: latest-loop 30s linear infinite;
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.1);
 }
 
 .latest-card {
-  width: 180px;
+  width: 192px;
   flex: 0 0 auto;
   border-radius: 10px;
   border: 1px solid #e5e7eb;
   background: #fff;
   padding: 6px;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
+}
+
+.quick-icon {
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.28), 0 0 0 3px rgba(255, 255, 255, 0.18);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.quick-icon:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.34), 0 0 0 3px rgba(255, 255, 255, 0.24);
 }
 
 @keyframes service-loop {
   0% {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
   100% {
-    transform: translateX(calc(-50% - 5px));
+    transform: translate3d(calc(-50% - 6px), 0, 0);
   }
 }
 
 @keyframes latest-loop {
   0% {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
   100% {
-    transform: translateX(calc(-50% - 5px));
+    transform: translate3d(calc(-50% - 6px), 0, 0);
   }
 }

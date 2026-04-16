@@ -2,12 +2,12 @@ import Link from "next/link";
 import { ChevronRight, Newspaper, Building2, Wifi, Smartphone, Tv, Landmark, Cpu } from "lucide-react";
 
 const serviceCards = [
-  { title: "ネットワーク", desc: "つながる品質を強化", image: "/cosmic-panel-v7.png", tone: "from-[#f7f7f8] to-[#ebedf0]" },
-  { title: "社会課題に、アンサーを。", desc: "人とテクノロジーをつなぐ", image: "/cosmic-showcase-v7.png", tone: "from-[#f8f9fb] to-[#e7edf5]" },
-  { title: "AI", desc: "AI共創で未来へ", image: "/cosmic-hero-v7.png", tone: "from-[#eaf4ff] to-[#dbeafe]" },
-  { title: "NatureBank", desc: "自然との共生", image: "/cosmic-hero-v5.png", tone: "from-[#e8f8ef] to-[#d1fae5]" },
-  { title: "スポーツ", desc: "感動を日常へ", image: "/cosmic-showcase-v7.png", tone: "from-[#fff1f2] to-[#ffe4e6]" },
-  { title: "UTX", desc: "次世代体験プラットフォーム", image: "/cosmic-panel-v7.png", tone: "from-[#eef2ff] to-[#e0e7ff]" },
+  { title: "ネットワーク", desc: "つながる品質を強化", image: "/mock-blocks/service-network.svg", tone: "from-[#f7f9fd] to-[#e8edf5]" },
+  { title: "社会課題", desc: "人とテクノロジーをつなぐ", image: "/mock-blocks/service-social.svg", tone: "from-[#f8f6ff] to-[#ece8ff]" },
+  { title: "AI", desc: "AI共創で未来へ", image: "/mock-blocks/service-ai.svg", tone: "from-[#eef7ff] to-[#e0f0ff]" },
+  { title: "NatureBank", desc: "自然との共生", image: "/mock-blocks/service-nature.svg", tone: "from-[#edf9f4] to-[#dcf5ea]" },
+  { title: "スポーツ", desc: "感動を日常へ", image: "/mock-blocks/service-sports.svg", tone: "from-[#fff4f2] to-[#ffe8e3]" },
+  { title: "UTX", desc: "次世代体験プラットフォーム", image: "/mock-blocks/service-utx.svg", tone: "from-[#f0f3ff] to-[#e5e9ff]" },
 ];
 
 const quickServices = [
@@ -24,21 +24,19 @@ const newsItems = [
 ];
 
 const initiatives = [
-  { title: "社会課題に、アンサーを。", image: "/cosmic-showcase-v7.png" },
-  { title: "AI", image: "/cosmic-hero-v7.png" },
-  { title: "スポーツ", image: "/cosmic-hero-v5.png" },
-  { title: "ネットワーク", image: "/cosmic-panel-v7.png" },
+  { title: "社会課題", image: "/mock-blocks/service-social.svg" },
+  { title: "AI", image: "/mock-blocks/service-ai.svg" },
+  { title: "スポーツ", image: "/mock-blocks/service-sports.svg" },
+  { title: "ネットワーク", image: "/mock-blocks/service-network.svg" },
 ];
 
 const latestProducts = [
-  "/cosmic-hero-v5.png",
-  "/cosmic-hero-v7.png",
-  "/cosmic-showcase-v7.png",
-  "/cosmic-panel-v7.png",
-  "/cosmic-hero-v5.png",
-  "/cosmic-showcase-v7.png",
-  "/cosmic-panel-v7.png",
-  "/cosmic-hero-v7.png",
+  "/mock-blocks/latest-1.svg",
+  "/mock-blocks/latest-2.svg",
+  "/mock-blocks/latest-3.svg",
+  "/mock-blocks/latest-4.svg",
+  "/mock-blocks/latest-5.svg",
+  "/mock-blocks/latest-6.svg",
 ];
 
 const flowSteps = [
@@ -64,18 +62,20 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="surface-card overflow-hidden py-3">
-          <div className="service-track">
-            {[...serviceCards, ...serviceCards].map((item, index) => (
-              <article key={`${item.title}-${index}`} className={`service-card bg-gradient-to-br ${item.tone}`}>
-                <img src={item.image} alt={item.title} className="h-28 w-full rounded-xl object-cover" />
-                <h3 className="mt-2 line-clamp-1 text-base font-semibold text-[#111827]">{item.title}</h3>
-                <p className="mt-1 line-clamp-2 text-xs text-[#4b5563]">{item.desc}</p>
-                <button className="mt-2 inline-flex h-5 w-5 items-center justify-center rounded-full bg-white text-[#6b7280] shadow">
-                  <ChevronRight className="h-3.5 w-3.5" />
-                </button>
-              </article>
-            ))}
+        <section className="surface-card p-3">
+          <div className="marquee-viewport">
+            <div className="service-track">
+              {[...serviceCards, ...serviceCards].map((item, index) => (
+                <article key={`${item.title}-${index}`} className={`service-card bg-gradient-to-br ${item.tone}`}>
+                  <img src={item.image} alt={item.title} className="h-28 w-full rounded-xl border border-white/60 object-cover" />
+                  <h3 className="mt-2 line-clamp-1 text-base font-semibold text-[#111827]">{item.title}</h3>
+                  <p className="mt-1 line-clamp-2 text-xs text-[#4b5563]">{item.desc}</p>
+                  <button className="mt-2 inline-flex h-6 w-6 items-center justify-center rounded-full bg-white text-[#4b5563] shadow-[0_6px_14px_rgba(15,23,42,0.22)]">
+                    <ChevronRight className="h-4 w-4" />
+                  </button>
+                </article>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -83,10 +83,10 @@ export default function HomePage() {
           <div className="mx-auto flex max-w-3xl flex-wrap items-center justify-center gap-3">
             {quickServices.map(({ label, icon: Icon }) => (
               <Link key={label} href="#" className="flex flex-col items-center gap-1 text-white">
-                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white/95 text-[#2563eb] shadow-[0_8px_20px_rgba(15,23,42,0.25)]">
+                <span className="quick-icon flex h-12 w-12 items-center justify-center rounded-full bg-white text-[#2563eb]">
                   <Icon className="h-5 w-5" />
                 </span>
-                <span className="text-xs font-medium">{label}</span>
+                <span className="text-xs font-semibold">{label}</span>
               </Link>
             ))}
           </div>
@@ -123,7 +123,7 @@ export default function HomePage() {
                 <article key={item.title} className="rounded-2xl bg-white p-3 shadow-[0_8px_24px_rgba(15,23,42,0.08)]">
                   <img src={item.image} alt={item.title} className="h-36 w-full rounded-xl object-cover" />
                   <h3 className="mt-2 text-sm font-semibold text-[#111827]">{item.title}</h3>
-                  <button className="mt-2 inline-flex items-center gap-1 rounded-full border border-[#d1d5db] bg-white px-2.5 py-1 text-xs text-[#374151]">
+                  <button className="mt-2 inline-flex items-center gap-1 rounded-full border border-[#d1d5db] bg-white px-2.5 py-1 text-xs text-[#374151] shadow-[0_5px_12px_rgba(15,23,42,0.12)]">
                     詳細を見る
                     <ChevronRight className="h-3 w-3" />
                   </button>
@@ -135,15 +135,17 @@ export default function HomePage() {
 
         <section className="surface-card bg-white p-4">
           <h2 className="text-center text-3xl font-bold text-[#1f2937]">AozoraLink 最前線</h2>
-          <div className="latest-track mt-4">
-            {[...latestProducts, ...latestProducts].map((image, index) => (
-              <article key={`${image}-${index}`} className="latest-card">
-                <img src={image} alt={`latest-${index}`} className="h-24 w-full rounded-lg object-cover" />
-              </article>
-            ))}
+          <div className="marquee-viewport mt-4">
+            <div className="latest-track">
+              {[...latestProducts, ...latestProducts].map((image, index) => (
+                <article key={`${image}-${index}`} className="latest-card">
+                  <img src={image} alt={`latest-${index}`} className="h-24 w-full rounded-lg object-cover" />
+                </article>
+              ))}
+            </div>
           </div>
           <div className="mt-4 flex justify-center">
-            <button className="inline-flex items-center gap-2 rounded-full bg-[#2563eb] px-4 py-2 text-xs font-semibold text-white">
+            <button className="inline-flex items-center gap-2 rounded-full bg-[#2563eb] px-4 py-2 text-xs font-semibold text-white shadow-[0_12px_26px_rgba(37,99,235,0.32)]">
               ニュース一覧へ
               <ChevronRight className="h-3.5 w-3.5" />
             </button>
@@ -156,14 +158,14 @@ export default function HomePage() {
             <p className="mt-2 text-sm text-[#1e3a5f]">見える化された3ステップで、導入から運用までをサポートします。</p>
             <div className="mt-5 grid gap-3 md:grid-cols-3">
               {flowSteps.map((item) => (
-                <article key={item.step} className="rounded-xl border border-white/60 bg-white/85 p-4">
+                <article key={item.step} className="rounded-xl border border-white/60 bg-white/85 p-4 shadow-[0_10px_24px_rgba(30,58,95,0.12)]">
                   <div className="text-xs font-semibold tracking-[0.14em] text-[#2563eb]">{item.step}</div>
                   <h3 className="mt-1 text-base font-semibold text-[#123766]">{item.title}</h3>
                   <p className="mt-1 text-xs text-[#334155]">{item.text}</p>
                 </article>
               ))}
             </div>
-            <button className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#2563eb] px-4 py-2 text-xs font-semibold text-white">
+            <button className="mt-5 inline-flex items-center gap-2 rounded-full bg-[#2563eb] px-4 py-2 text-xs font-semibold text-white shadow-[0_12px_26px_rgba(37,99,235,0.35)]">
               詳しくはこちら
               <ChevronRight className="h-3.5 w-3.5" />
             </button>
@@ -175,7 +177,7 @@ export default function HomePage() {
             <h2 className="text-center text-3xl font-bold text-[#1f2937]">Why Choose AozoraLink</h2>
             <div className="mt-4 grid gap-3">
               {whyChooseUs.map((item) => (
-                <article key={item.title} className="rounded-xl border border-[#e5e7eb] bg-[#f9fafb] p-4">
+                <article key={item.title} className="rounded-xl border border-[#e5e7eb] bg-[#f9fafb] p-4 shadow-[0_8px_18px_rgba(15,23,42,0.06)]">
                   <div className="inline-flex rounded-full bg-[#94a3b8] px-2 py-0.5 text-[11px] font-semibold text-white">{item.badge}</div>
                   <h3 className="mt-2 text-sm font-semibold text-[#111827]">{item.title}</h3>
                   <p className="mt-1 text-xs text-[#4b5563]">{item.text}</p>
@@ -183,7 +185,7 @@ export default function HomePage() {
               ))}
             </div>
             <div className="mt-5 flex justify-center">
-              <button className="inline-flex items-center gap-2 rounded-full bg-[#2563eb] px-5 py-2 text-xs font-semibold text-white">
+              <button className="inline-flex items-center gap-2 rounded-full bg-[#2563eb] px-5 py-2 text-xs font-semibold text-white shadow-[0_12px_26px_rgba(37,99,235,0.32)]">
                 一覧を見る
                 <ChevronRight className="h-3.5 w-3.5" />
               </button>
