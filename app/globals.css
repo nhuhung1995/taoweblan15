@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --bg: #f3f4f6;
+  --bg: #e5e7eb;
   --text: #1f2937;
 }
 
@@ -35,7 +35,7 @@ select {
 }
 
 ::selection {
-  background: rgba(230, 0, 18, 0.18);
+  background: rgba(230, 0, 18, 0.2);
 }
 
 main,
@@ -43,4 +43,34 @@ header,
 footer {
   position: relative;
   z-index: 1;
+}
+
+.service-track {
+  display: flex;
+  width: max-content;
+  gap: 10px;
+  padding: 0 10px;
+  animation: service-loop 24s linear infinite;
+}
+
+.service-track:hover {
+  animation-play-state: paused;
+}
+
+.service-card {
+  width: 160px;
+  flex: 0 0 auto;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  padding: 8px;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+}
+
+@keyframes service-loop {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 5px));
+  }
 }

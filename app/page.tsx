@@ -1,151 +1,164 @@
 import Link from "next/link";
-import { ChevronRight, Search, Smartphone, Wifi, Home, Layers3, Send } from "lucide-react";
+import { ChevronRight, Newspaper, Building2, Wifi, Smartphone, Tv, Landmark, Cpu } from "lucide-react";
 
-const categories = [
-  { label: "スマートフォン", icon: Smartphone },
-  { label: "インターネット", icon: Wifi },
-  { label: "でんき・ガス", icon: Home },
-  { label: "サービス", icon: Layers3 },
+const serviceCards = [
+  {
+    title: "ネットワーク",
+    desc: "つながる品質を強化",
+    image: "/cosmic-panel-v7.png",
+    tone: "from-[#f7f7f8] to-[#ebedf0]",
+  },
+  {
+    title: "社会課題に、アンサーを。",
+    desc: "人とテクノロジーをつなぐ",
+    image: "/cosmic-showcase-v7.png",
+    tone: "from-[#f8f9fb] to-[#e7edf5]",
+  },
+  {
+    title: "AI",
+    desc: "AI共創で未来へ",
+    image: "/cosmic-hero-v7.png",
+    tone: "from-[#eaf4ff] to-[#dbeafe]",
+  },
+  {
+    title: "NatureBank",
+    desc: "自然との共生",
+    image: "/cosmic-hero-v5.png",
+    tone: "from-[#e8f8ef] to-[#d1fae5]",
+  },
+  {
+    title: "スポーツ",
+    desc: "感動を日常へ",
+    image: "/cosmic-showcase-v7.png",
+    tone: "from-[#fff1f2] to-[#ffe4e6]",
+  },
+  {
+    title: "UTX",
+    desc: "次世代体験プラットフォーム",
+    image: "/cosmic-panel-v7.png",
+    tone: "from-[#eef2ff] to-[#e0e7ff]",
+  },
 ];
 
-const news = [
-  "iPhoneキャンペーン情報を更新しました",
-  "SoftBank Airのお申込み特典を追加しました",
-  "春ののりかえ割がスタートしました",
+const quickServices = [
+  { label: "料金プラン", icon: Smartphone },
+  { label: "インターネット", icon: Wifi },
+  { label: "エンタメ", icon: Tv },
+  { label: "金融", icon: Landmark },
+  { label: "AI", icon: Cpu },
+];
+
+const newsItems = [
+  {
+    group: "重要なお知らせ",
+    title: "通信障害情報",
+    text: "一部エリアでの通信影響について、復旧見込みを更新しました。",
+    tone: "red",
+  },
+  {
+    group: "製品・サービス情報",
+    title: "新料金プラン",
+    text: "スマートフォン向け新プランの受付を開始しました。",
+    tone: "blue",
+  },
+];
+
+const initiatives = [
+  { title: "社会課題に、アンサーを。", image: "/cosmic-showcase-v7.png" },
+  { title: "AI", image: "/cosmic-hero-v7.png" },
+  { title: "スポーツ", image: "/cosmic-hero-v5.png" },
+  { title: "ネットワーク", image: "/cosmic-panel-v7.png" },
 ];
 
 export default function HomePage() {
   return (
-    <main className="bg-[#f3f4f6] text-[#1f2937]">
-      <section className="border-b border-[#e5e7eb] bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-3 md:px-8 lg:px-10">
-          <div className="flex items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <div className="h-8 w-14 rounded-sm bg-[#e60012]" />
-              <span className="text-2xl font-semibold tracking-tight text-black">SoftBank</span>
-            </div>
-            <div className="hidden items-center gap-2 rounded-full border border-[#d1d5db] bg-[#f9fafb] px-4 py-2 text-sm text-[#4b5563] md:flex">
-              <Search className="h-4 w-4" />
-              検索
+    <main className="bg-[#e5e7eb] text-[#1f2937]">
+      <div className="mx-auto flex max-w-7xl flex-col gap-4 px-3 py-4 md:px-6 lg:px-8">
+        <section className="border border-[#ef4444] bg-[#f3f4f6]">
+          <div className="flex items-center justify-center py-2">
+            <div className="flex items-center gap-2 border border-[#ef4444] bg-white px-4 py-1.5">
+              <div className="h-6 w-8 bg-[#e60012]" />
+              <span className="text-3xl leading-none text-[#111827]">SoftBank</span>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="relative overflow-hidden bg-[linear-gradient(120deg,#fef2f2,#ffffff_35%,#eff6ff)]">
-        <div className="absolute -right-20 -top-16 h-72 w-72 rounded-full bg-[#e60012]/10 blur-3xl" />
-        <div className="absolute -left-24 -bottom-20 h-80 w-80 rounded-full bg-[#1d4ed8]/10 blur-3xl" />
-
-        <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-14 md:px-8 lg:grid-cols-[1.15fr_0.85fr] lg:px-10 lg:py-20">
-          <div>
-            <div className="inline-flex items-center rounded-full border border-[#fecaca] bg-[#fff1f2] px-4 py-1.5 text-sm font-medium text-[#be123c]">
-              期間限定キャンペーン
-            </div>
-            <h1 className="mt-5 text-4xl font-bold leading-tight text-[#111827] md:text-5xl">
-              つながる毎日を、
-              <br />
-              もっとシンプルに。
-            </h1>
-            <p className="mt-5 max-w-xl text-lg leading-8 text-[#4b5563]">
-              スマホ・インターネット・でんきまで、生活に必要な通信サービスをまとめて比較。まずはホーム画面のフォームから最適プランをチェックできます。
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                href="#form"
-                className="inline-flex items-center gap-2 rounded-full bg-[#e60012] px-6 py-3 font-semibold text-white transition hover:bg-[#c40010]"
-              >
-                フォームを試す
-                <ChevronRight className="h-4 w-4" />
-              </Link>
-              <Link
-                href="#news"
-                className="inline-flex items-center rounded-full border border-[#d1d5db] bg-white px-6 py-3 font-semibold text-[#1f2937] transition hover:bg-[#f9fafb]"
-              >
-                最新情報を見る
-              </Link>
-            </div>
-          </div>
-
-          <div className="rounded-3xl border border-[#e5e7eb] bg-white p-6 shadow-[0_20px_60px_rgba(15,23,42,0.08)] md:p-8" id="form">
-            <div className="text-sm font-semibold uppercase tracking-[0.16em] text-[#6b7280]">Plan Check</div>
-            <h2 className="mt-2 text-2xl font-bold text-[#111827]">料金プラン診断フォーム</h2>
-            <p className="mt-2 text-sm leading-6 text-[#6b7280]">
-              必要項目だけ入力して、あなたに合うプランをすぐ確認できます。
-            </p>
-
-            <form className="mt-6 grid gap-4">
-              <label className="grid gap-1.5 text-sm font-medium text-[#374151]">
-                お名前
-                <input
-                  type="text"
-                  placeholder="例）山田 太郎"
-                  className="h-11 rounded-xl border border-[#d1d5db] bg-white px-3 outline-none transition focus:border-[#e60012]"
-                />
-              </label>
-
-              <label className="grid gap-1.5 text-sm font-medium text-[#374151]">
-                ご利用エリア
-                <select className="h-11 rounded-xl border border-[#d1d5db] bg-white px-3 outline-none transition focus:border-[#e60012]">
-                  <option>東京都</option>
-                  <option>大阪府</option>
-                  <option>愛知県</option>
-                  <option>福岡県</option>
-                </select>
-              </label>
-
-              <label className="grid gap-1.5 text-sm font-medium text-[#374151]">
-                ご希望サービス
-                <select className="h-11 rounded-xl border border-[#d1d5db] bg-white px-3 outline-none transition focus:border-[#e60012]">
-                  <option>スマートフォン</option>
-                  <option>SoftBank Air</option>
-                  <option>光回線</option>
-                  <option>でんき・ガス</option>
-                </select>
-              </label>
-
-              <button
-                type="button"
-                className="mt-1 inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-[#e60012] px-5 font-semibold text-white transition hover:bg-[#c40010]"
-              >
-                診断をはじめる
-                <Send className="h-4 w-4" />
-              </button>
-            </form>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-12 md:px-8 lg:px-10">
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {categories.map(({ label, icon: Icon }) => (
+        <section className="overflow-hidden border border-[#ef4444] bg-white py-2">
+          <div className="service-track">
+            {[...serviceCards, ...serviceCards].map((item, index) => (
               <article
-                key={label}
-                className="flex items-center gap-4 rounded-2xl border border-[#e5e7eb] bg-[#fafafa] p-5 transition hover:-translate-y-0.5 hover:bg-white hover:shadow-[0_10px_30px_rgba(15,23,42,0.08)]"
+                key={`${item.title}-${index}`}
+                className={`service-card bg-gradient-to-br ${item.tone}`}
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#fee2e2] text-[#e60012]">
-                  <Icon className="h-5 w-5" />
-                </div>
-                <div className="font-semibold text-[#111827]">{label}</div>
+                <img src={item.image} alt={item.title} className="h-28 w-full rounded-xl object-cover" />
+                <h3 className="mt-2 line-clamp-1 text-base font-semibold text-[#111827]">{item.title}</h3>
+                <p className="mt-1 line-clamp-2 text-xs text-[#4b5563]">{item.desc}</p>
+                <button className="mt-2 inline-flex h-5 w-5 items-center justify-center rounded-full bg-white text-[#6b7280] shadow">
+                  <ChevronRight className="h-3.5 w-3.5" />
+                </button>
               </article>
             ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="news" className="border-t border-[#e5e7eb] bg-[#f9fafb]">
-        <div className="mx-auto max-w-7xl px-4 py-12 md:px-8 lg:px-10">
-          <h3 className="text-2xl font-bold text-[#111827]">お知らせ</h3>
-          <div className="mt-5 divide-y divide-[#e5e7eb] rounded-2xl border border-[#e5e7eb] bg-white">
-            {news.map((item) => (
-              <div key={item} className="flex items-center justify-between gap-4 px-5 py-4 text-sm md:text-base">
-                <span className="text-[#374151]">{item}</span>
-                <ChevronRight className="h-4 w-4 shrink-0 text-[#9ca3af]" />
-              </div>
+        <section className="border border-[#ef4444] bg-[#3b82f6] px-4 py-4">
+          <div className="mx-auto flex max-w-3xl flex-wrap items-center justify-center gap-3">
+            {quickServices.map(({ label, icon: Icon }) => (
+              <Link key={label} href="#" className="flex flex-col items-center gap-1 text-white">
+                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white/95 text-[#2563eb] shadow-[0_8px_20px_rgba(15,23,42,0.25)]">
+                  <Icon className="h-5 w-5" />
+                </span>
+                <span className="text-xs font-medium">{label}</span>
+              </Link>
             ))}
           </div>
-        </div>
-      </section>
+        </section>
+
+        <section className="border border-[#ef4444] bg-[#f3f4f6] p-4" id="news">
+          <div className="mx-auto max-w-2xl rounded-xl border border-[#d1d5db] bg-white p-3">
+            <div className="flex items-center justify-between border-b border-[#e5e7eb] px-1 pb-2">
+              <h2 className="text-sm font-semibold text-[#374151]">News</h2>
+              <Newspaper className="h-4 w-4 text-[#6b7280]" />
+            </div>
+            <div className="mt-3 grid gap-3">
+              {newsItems.map((item) => (
+                <article key={item.title} className="rounded-lg border border-[#e5e7eb] bg-[#f9fafb] p-3">
+                  <div
+                    className={`inline-flex rounded-full px-2 py-0.5 text-[11px] font-semibold text-white ${
+                      item.tone === "red" ? "bg-[#dc2626]" : "bg-[#2563eb]"
+                    }`}
+                  >
+                    {item.group}
+                  </div>
+                  <h3 className="mt-2 text-sm font-semibold text-[#111827]">{item.title}</h3>
+                  <p className="mt-1 text-xs text-[#4b5563]">{item.text}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="border border-[#ef4444] bg-[#d1d5db] p-4">
+          <div className="mx-auto max-w-2xl">
+            <h2 className="flex items-center justify-center gap-2 text-center text-3xl font-bold text-[#1f2937]">
+              <Building2 className="h-7 w-7" />
+              ソフトバンクの取り組み
+            </h2>
+            <div className="mt-4 grid gap-3 sm:grid-cols-2">
+              {initiatives.map((item) => (
+                <article key={item.title} className="rounded-2xl bg-white p-3 shadow-[0_8px_24px_rgba(15,23,42,0.08)]">
+                  <img src={item.image} alt={item.title} className="h-36 w-full rounded-xl object-cover" />
+                  <h3 className="mt-2 text-sm font-semibold text-[#111827]">{item.title}</h3>
+                  <button className="mt-2 inline-flex items-center gap-1 rounded-full border border-[#d1d5db] bg-white px-2.5 py-1 text-xs text-[#374151]">
+                    詳細を見る
+                    <ChevronRight className="h-3 w-3" />
+                  </button>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      </div>
     </main>
   );
 }
